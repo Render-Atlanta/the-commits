@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 0 0% 0%;
+    --color-foreground: 0 0% 100%;
+    --color-primary: 40 60% 50%;
+
+    ::selection {
+      @apply bg-primary text-background;
+    }
+
+    body,
+    html {
+      @apply bg-background;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    div#__next {
+      overflow: visible;
+    }
+
+    body > div {
+      background: transparent !important;
+    }
+  }
+}
