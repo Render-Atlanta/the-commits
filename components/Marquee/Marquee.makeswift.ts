@@ -6,8 +6,8 @@ import Marquee from './Marquee'
 
 export const props = {
   className: Style(),
-  logos: List({
-    label: 'Logos',
+  items: List({
+    label: 'Items',
     type: Group({
       label: 'Logo',
       props: {
@@ -20,23 +20,22 @@ export const props = {
           defaultValue: 'Image',
           selectAll: true,
         }),
-        logoWidth: Number({
-          label: 'Width',
-          defaultValue: 96,
-          step: 4,
-          suffix: 'px',
-        }),
-        mobileLogoWidth: Number({
-          label: 'Mobile width',
-          defaultValue: 64,
-          step: 4,
-          suffix: 'px',
+        text: TextInput({
+          label: 'Text',
+          defaultValue: 'The Commits',
+          selectAll: true,
         }),
       },
     }),
-    getItemLabel(logo) {
-      return logo?.logoAlt || 'Image'
+    getItemLabel(item) {
+      return item?.text || 'Item'
     },
+  }),
+  fontSize: Number({
+    label: 'Font size',
+    defaultValue: 20,
+    step: 1,
+    suffix: 'vw',
   }),
   repeat: Number({
     label: 'Repeat',
@@ -49,12 +48,6 @@ export const props = {
     label: 'Animation duration',
     defaultValue: 20,
     suffix: 's',
-  }),
-  gap: Number({
-    label: 'Gap',
-    defaultValue: 48,
-    suffix: 'px',
-    step: 4,
   }),
   fadeEdges: Checkbox({ label: 'Fade edges', defaultValue: false }),
 }

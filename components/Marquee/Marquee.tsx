@@ -3,33 +3,32 @@ import React, { CSSProperties, Ref, forwardRef } from 'react'
 
 import clsx from 'clsx'
 
-type Logo = {
+type Item = {
   logoImage?: { url: string; dimensions: { width: number; height: number } }
   logoAlt: string
-  logoWidth: number
-  mobileLogoWidth: number
+  text: string
 }
 
 type Props = {
   className?: string
-  logos: Logo[]
+  items: Item[]
+  fontSize?: number
   fadeEdges?: boolean
   pauseOnHover?: boolean
   reverse?: boolean
   duration?: number
-  gap?: number
   repeat?: number
 }
 
 export const Marquee = forwardRef(function Marquee(
   {
     className,
-    logos,
+    items,
+    fontSize = 20,
     fadeEdges = false,
     pauseOnHover = false,
     reverse = false,
     duration = 40,
-    gap = 48,
     repeat = 4,
   }: Props,
   ref: Ref<HTMLDivElement>
@@ -51,37 +50,30 @@ export const Marquee = forwardRef(function Marquee(
           <div
             key={i}
             className={clsx(
-              'flex shrink-0 animate-scrollLeft items-center',
+              'flex shrink-0 animate-scrollLeft items-center gap-x-[1.5vw] px-[1.5vw]',
               pauseOnHover && 'group-hover/marquee:[animation-play-state:paused]',
               reverse && '[animation-direction:reverse]'
             )}
-            style={{ columnGap: gap, paddingInlineStart: gap / 2, paddingInlineEnd: gap / 2 }}
           >
-            {logos.map(({ logoImage, logoAlt, logoWidth = 96, mobileLogoWidth = 56 }, index) => {
-              if (logoImage == null) {
-                return <div key={index} className="bg-background/50 size-16 rounded-xl" />
-              }
-
+            {items.map(({ logoImage, logoAlt, text }, index) => {
               return (
-                <div key={index}>
-                  <Image
-                    src={logoImage.url}
-                    alt={logoAlt}
-                    width={logoWidth}
-                    height={logoWidth / (logoImage.dimensions.width / logoImage.dimensions.height)}
-                    priority
-                    className="hidden md:block"
-                  />
-                  <Image
-                    src={logoImage.url}
-                    alt={logoAlt}
-                    width={mobileLogoWidth}
-                    height={
-                      mobileLogoWidth / (logoImage.dimensions.width / logoImage.dimensions.height)
-                    }
-                    priority
-                    className="md:hidden"
-                  />
+                <div
+                  key={index}
+                  className="font-heading text-foreground flex items-center gap-x-[3vw] font-light tracking-tight md:tracking-tighter"
+                  style={{ fontSize: `${fontSize}vw` }}
+                >
+                  {logoImage ? (
+                    <div className="relative aspect-square" style={{ width: `${fontSize}vw` }}>
+                      <Image
+                        src={logoImage.url}
+                        alt={logoAlt}
+                        fill
+                        priority
+                        className="object-contain"
+                      />
+                    </div>
+                  ) : null}
+                  {text}
                 </div>
               )
             })}
