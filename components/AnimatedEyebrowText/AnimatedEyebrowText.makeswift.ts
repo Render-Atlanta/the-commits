@@ -1,4 +1,4 @@
-import { Color, Select, Style, TextInput } from '@makeswift/runtime/controls'
+import { Color, Number, Select, Style, TextInput } from '@makeswift/runtime/controls'
 
 import { runtime } from '@/lib/makeswift/runtime'
 
@@ -11,6 +11,7 @@ export const props = {
     label: 'Color',
     defaultValue: '#CC9933',
   }),
+  fontSize: Number({ label: 'Font size', defaultValue: 16, step: 1, suffix: 'px' }),
   align: Select({
     label: 'Align',
     options: [

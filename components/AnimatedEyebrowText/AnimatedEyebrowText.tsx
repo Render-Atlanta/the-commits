@@ -10,6 +10,7 @@ export interface Props {
   color?: string
   text?: string
   align?: 'left' | 'center' | 'right'
+  fontSize?: number
 }
 
 export function AnimatedEyebrowText({
@@ -17,6 +18,7 @@ export function AnimatedEyebrowText({
   color = 'black',
   text = 'Heading',
   align = 'left',
+  fontSize = 16,
 }: Props) {
   const [shouldPlay, setShouldPlay] = useState(false)
   const [pageLoaded, setPageLoaded] = useState(false)
@@ -88,14 +90,18 @@ export function AnimatedEyebrowText({
   return (
     <div
       ref={elementRef}
-      className={clsx(className, 'font-mono text-lg uppercase', {
-        'text-left': align === 'left',
-        'text-center': align === 'center',
-        'text-right': align === 'right',
-      })}
-      style={{ color }}
+      className={clsx(
+        className,
+        'font-heading text-lg uppercase',
+        {
+          left: 'text-left',
+          center: 'text-center',
+          right: 'text-right',
+        }[align]
+      )}
+      style={{ color, fontSize: `${fontSize}px` }}
     >
-      [<span ref={ref} className="tracking-wider" />]
+      [ <span ref={ref} className="font-mono tracking-wider" /> ]
     </div>
   )
 }

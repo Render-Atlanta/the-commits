@@ -19,7 +19,7 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
     <Link
       className={clsx(
         className,
-        'group/button relative z-0 inline-flex h-14 items-stretch overflow-hidden border border-foreground text-center font-heading text-xl uppercase leading-none outline-none transition-colors duration-300 hover:border-primary sm:h-16',
+        'group/button relative z-0 inline-flex h-14 shrink-0 items-stretch overflow-hidden border border-foreground text-center font-heading text-lg uppercase leading-none outline-none sm:h-16 sm:text-xl',
         {
           black: 'border-foreground text-foreground',
           white: 'bg-foreground text-background',
@@ -37,7 +37,7 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
         </svg>
       </div>
       <div className="flex h-full items-stretch transition-transform duration-300 group-hover/button:translate-x-16">
-        <span className="self-center px-6 sm:px-8">{text}</span>
+        <span className="self-center px-4 sm:px-6 md:px-8">{text}</span>
         <div className="grid aspect-square place-items-center bg-primary text-background">
           <svg
             className="size-4 transition-transform duration-300 group-hover/button:rotate-45"
