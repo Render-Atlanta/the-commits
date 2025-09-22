@@ -21,7 +21,7 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
         className,
         'group/button relative z-0 inline-flex h-14 shrink-0 items-stretch overflow-hidden border border-foreground text-center font-heading text-lg uppercase leading-none outline-none sm:h-16 sm:text-xl',
         {
-          black: 'border-foreground text-foreground',
+          black: 'border-foreground bg-background text-foreground',
           white: 'bg-foreground text-background',
         }[color]
       )}

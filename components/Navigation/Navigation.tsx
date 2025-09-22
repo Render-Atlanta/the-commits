@@ -30,36 +30,37 @@ type Props = {
 
 export function Navigation({ className, logo, text, cta }: Props) {
   return (
-    <>
-      <ReactHeadroom className="relative z-50 w-full" upTolerance={10} downTolerance={0}>
-        <header className={clsx(className, 'h-[72px] w-full p-2 sm:h-[88px] sm:p-3')}>
-          <div className="flex h-full w-full items-stretch justify-between">
-            <div className="flex items-center border border-foreground/40 bg-background">
-              {logo.image && (
-                <Link
-                  href={logo.link?.href ?? '#'}
-                  target={logo.link?.target}
-                  className="h-full py-2 pl-3 pr-5"
-                >
-                  <Image
-                    alt={logo.alt}
-                    height={logo.image.dimensions.width / logo.image.dimensions.height}
-                    priority
-                    src={logo.image.url}
-                    width={logo.width}
-                    className="h-full object-contain"
-                  />
-                </Link>
-              )}
-              <div className="hidden h-full items-center border-l border-foreground/40 px-6 font-heading text-xl uppercase text-primary sm:flex">
-                {text}
-              </div>
-            </div>
-
-            <LinkButton link={cta.link} text={cta.text} color={cta.color ?? 'black'} />
+    <header
+      className={clsx(
+        className,
+        'fixed inset-x-0 top-0 z-50 h-[72px] w-full p-2 sm:h-[88px] sm:p-3'
+      )}
+    >
+      <div className="flex h-full w-full items-stretch justify-between">
+        <div className="flex items-center border border-foreground/40 bg-background">
+          {logo.image && (
+            <Link
+              href={logo.link?.href ?? '#'}
+              target={logo.link?.target}
+              className="h-full py-2 pl-3 pr-5"
+            >
+              <Image
+                alt={logo.alt}
+                height={logo.image.dimensions.width / logo.image.dimensions.height}
+                priority
+                src={logo.image.url}
+                width={logo.width}
+                className="h-full object-contain"
+              />
+            </Link>
+          )}
+          <div className="hidden h-full items-center border-l border-foreground/40 px-6 font-heading text-xl uppercase text-primary sm:flex">
+            {text}
           </div>
-        </header>
-      </ReactHeadroom>
-    </>
+        </div>
+
+        <LinkButton link={cta.link} text={cta.text} color={cta.color ?? 'black'} />
+      </div>
+    </header>
   )
 }
