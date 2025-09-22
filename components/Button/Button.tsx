@@ -19,16 +19,16 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
     <Link
       className={clsx(
         className,
-        'group/button font-heading border-foreground relative z-0 inline-flex h-14 items-stretch overflow-hidden border text-center text-xl uppercase leading-none outline-none sm:h-16',
+        'group/button relative z-0 inline-flex h-14 items-stretch overflow-hidden border border-foreground text-center font-heading text-xl uppercase leading-none outline-none transition-colors duration-300 hover:border-primary sm:h-16',
         {
-          black: 'text-foreground border-foreground',
-          white: 'text-background bg-foreground',
+          black: 'border-foreground text-foreground',
+          white: 'bg-foreground text-background',
         }[color]
       )}
       href={link?.href ?? '#'}
       target={link?.target}
     >
-      <div className="bg-primary text-background absolute inset-y-0 left-0 grid aspect-square -translate-x-16 place-items-center transition-transform duration-300 group-hover/button:translate-x-0">
+      <div className="absolute inset-y-0 left-0 grid aspect-square -translate-x-16 place-items-center bg-primary text-background transition-transform duration-300 group-hover/button:translate-x-0">
         <svg
           className="size-4 transition-transform duration-300 group-hover/button:rotate-45"
           fill="none"
@@ -38,7 +38,7 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
       </div>
       <div className="flex h-full items-stretch transition-transform duration-300 group-hover/button:translate-x-16">
         <span className="self-center px-6 sm:px-8">{text}</span>
-        <div className="bg-primary text-background grid aspect-square place-items-center">
+        <div className="grid aspect-square place-items-center bg-primary text-background">
           <svg
             className="size-4 transition-transform duration-300 group-hover/button:rotate-45"
             fill="none"
@@ -75,14 +75,14 @@ export function Button({
       ref={ref}
       className={clsx(
         className,
-        'group/button font-heading border-foreground relative z-0 inline-flex h-14 items-stretch overflow-hidden border text-center text-xl uppercase leading-none outline-none sm:h-16',
+        'group/button relative z-0 inline-flex h-14 items-stretch overflow-hidden border border-foreground text-center font-heading text-xl uppercase leading-none outline-none sm:h-16',
         {
-          black: 'text-foreground border-foreground',
-          white: 'text-background bg-foreground',
+          black: 'border-foreground text-foreground',
+          white: 'bg-foreground text-background',
         }[color]
       )}
     >
-      <div className="bg-primary text-background absolute inset-y-0 left-0 grid aspect-square -translate-x-16 place-items-center transition-transform duration-300 group-hover/button:translate-x-0">
+      <div className="absolute inset-y-0 left-0 grid aspect-square -translate-x-16 place-items-center bg-primary text-background transition-transform duration-300 group-hover/button:translate-x-0">
         <svg
           className="size-4 transition-transform duration-300 group-hover/button:rotate-45"
           fill="none"
@@ -92,7 +92,7 @@ export function Button({
       </div>
       <div className="flex h-full items-stretch transition-transform duration-300 group-hover/button:translate-x-16">
         <span className="self-center px-6 sm:px-8">{text}</span>
-        <div className="bg-primary text-background grid aspect-square place-items-center">
+        <div className="grid aspect-square place-items-center bg-primary text-background">
           <svg
             className="size-4 transition-transform duration-300 group-hover/button:rotate-45"
             fill="none"

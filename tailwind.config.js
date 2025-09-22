@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         heading: ['var(--font-heading)'],
         body: ['var(--font-body)'],
+        mono: ['var(--font-mono)'],
       },
       keyframes: {
         collapse: {

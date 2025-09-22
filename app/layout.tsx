@@ -1,4 +1,5 @@
 import { Params } from 'next/dist/server/request/params'
+import { Space_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 
 import { getSiteVersion } from '@makeswift/runtime/next/server'
@@ -21,6 +22,13 @@ const supreme = localFont({
   variable: '--font-body',
 })
 
+const spaceMono = Space_Mono({
+  weight: ['400'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono',
+})
+
 export default async function RootLayout({
   children,
   params,
@@ -33,7 +41,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang}>
-      <body className={clsx(nippo.variable, supreme.variable)}>
+      <body className={clsx(nippo.variable, supreme.variable, spaceMono.variable)}>
         <MakeswiftProvider siteVersion={await getSiteVersion()}>{children}</MakeswiftProvider>
       </body>
     </html>
