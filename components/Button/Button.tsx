@@ -28,7 +28,7 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
       href={link?.href ?? '#'}
       target={link?.target}
     >
-      <div className="absolute inset-y-0 left-0 grid aspect-square -translate-x-16 place-items-center bg-primary text-background transition-transform duration-300 ease-out group-hover/button:translate-x-0">
+      <div className="absolute left-0 grid size-14 -translate-x-16 place-items-center bg-primary text-background transition-transform duration-300 ease-out group-hover/button:translate-x-0 sm:size-16">
         <svg
           className="size-4 transition-transform duration-300 ease-out group-hover/button:rotate-45"
           fill="none"
@@ -37,8 +37,8 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
         </svg>
       </div>
       <div className="flex h-full items-stretch transition-transform duration-300 ease-out group-hover/button:translate-x-16">
-        <span className="self-center px-4 sm:px-6 md:px-8">{text}</span>
-        <div className="grid aspect-square place-items-center bg-primary text-background">
+        <span className="shrink-0 self-center px-4 sm:px-6 md:px-8">{text}</span>
+        <div className="grid size-14 place-items-center bg-primary text-background sm:size-16">
           <svg
             className="size-4 transition-transform duration-300 ease-out group-hover/button:rotate-45"
             fill="none"
