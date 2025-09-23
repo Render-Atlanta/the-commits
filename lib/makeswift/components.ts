@@ -1,6 +1,7 @@
 import '@/components/Accordions/Accordions.makeswift'
 import '@/components/AnimatedEyebrowText/AnimatedEyebrowText.makeswift'
 import '@/components/Button/Button.makeswift'
+import '@/components/LinkList/LinkList.makeswift'
 import '@/components/Marquee/Marquee.makeswift'
 import '@/components/Navigation/Navigation.makeswift'
 import '@/components/Tabs/Tabs.makeswift'

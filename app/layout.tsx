@@ -37,9 +37,10 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode
-  params: Params
+  params: Promise<Params>
 }>) {
-  const langParam = params?.lang
+  const resolvedParams = await params
+  const langParam = resolvedParams?.lang
   const lang = Array.isArray(langParam) ? langParam[0] : langParam
   const navigationSnapshot = await client.getComponentSnapshot(
     `navigation`, //id of the component rendered on the page

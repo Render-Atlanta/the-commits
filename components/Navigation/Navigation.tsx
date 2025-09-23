@@ -33,7 +33,7 @@ export function Navigation({ className, logo, text, cta }: Props) {
     <header
       className={clsx(
         className,
-        'fixed inset-x-0 top-0 z-50 h-[72px] w-full p-2 sm:h-[88px] sm:p-3'
+        'sticky inset-x-0 top-0 z-50 h-[72px] w-full p-2 sm:fixed sm:h-[88px] sm:p-3'
       )}
     >
       <div className="flex h-full w-full items-stretch justify-between">

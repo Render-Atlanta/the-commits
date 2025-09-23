@@ -19,7 +19,7 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
     <Link
       className={clsx(
         className,
-        'group/button relative z-0 inline-flex h-14 shrink-0 items-stretch overflow-hidden border border-foreground text-center font-heading text-lg uppercase leading-none outline-none sm:h-16 sm:text-xl',
+        'group/button relative z-0 inline-flex h-14 shrink-0 items-stretch overflow-hidden border border-foreground/40 text-center font-heading text-lg uppercase leading-none outline-none transition-colors duration-300 ease-out hover:border-foreground sm:h-16 sm:text-xl',
         {
           black: 'border-foreground bg-background text-foreground',
           white: 'bg-foreground text-background',
@@ -28,19 +28,19 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
       href={link?.href ?? '#'}
       target={link?.target}
     >
-      <div className="absolute inset-y-0 left-0 grid aspect-square -translate-x-16 place-items-center bg-primary text-background transition-transform duration-300 group-hover/button:translate-x-0">
+      <div className="absolute inset-y-0 left-0 grid aspect-square -translate-x-16 place-items-center bg-primary text-background transition-transform duration-300 ease-out group-hover/button:translate-x-0">
         <svg
-          className="size-4 transition-transform duration-300 group-hover/button:rotate-45"
+          className="size-4 transition-transform duration-300 ease-out group-hover/button:rotate-45"
           fill="none"
         >
           <path fill="#000" d="M16 14h-2V3.414L1.707 15.707.293 14.293 12.586 2H2V0h14v14Z" />
         </svg>
       </div>
-      <div className="flex h-full items-stretch transition-transform duration-300 group-hover/button:translate-x-16">
+      <div className="flex h-full items-stretch transition-transform duration-300 ease-out group-hover/button:translate-x-16">
         <span className="self-center px-4 sm:px-6 md:px-8">{text}</span>
         <div className="grid aspect-square place-items-center bg-primary text-background">
           <svg
-            className="size-4 transition-transform duration-300 group-hover/button:rotate-45"
+            className="size-4 transition-transform duration-300 ease-out group-hover/button:rotate-45"
             fill="none"
           >
             <path fill="#000" d="M16 14h-2V3.414L1.707 15.707.293 14.293 12.586 2H2V0h14v14Z" />
