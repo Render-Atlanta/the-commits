@@ -14,9 +14,17 @@
 
     body,
     html {
-      @apply bg-background;
+      @apply bg-background font-body;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    label {
+      @apply font-heading;
+    }
+
+    button[type='submit'] {
+      @apply mt-2 !h-14 max-h-none shrink-0 font-heading text-lg uppercase !ring-1 !ring-foreground/40 !transition-all duration-300 ease-out hover:!ring-foreground sm:text-xl;
     }
 
     div#__next {
