@@ -55,7 +55,7 @@ export function AnimatedEyebrowText({
             // Element is fully in viewport - add delay before starting animation
             setTimeout(() => {
               setShouldPlay(true)
-            }, 300)
+            }, 100)
             observer.disconnect()
           }
         })
