@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 
-import Spline from '@splinetool/react-spline'
 import clsx from 'clsx'
 
 export interface Props {

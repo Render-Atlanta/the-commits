@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 export interface ButtonLinkProps {
   className?: string
-  link?: { href: string; target?: string }
+  link?: { href: string; target?: '_blank' | '_self' }
   color?: 'black' | 'white'
   size?: 'large' | 'medium' | 'small'
   text?: string
@@ -15,6 +15,7 @@ export interface ButtonLinkProps {
 }
 
 export function LinkButton({ className, link, color = 'black', text = 'Button' }: ButtonLinkProps) {
+  console.log('@@ link:', link)
   return (
     <Link
       className={clsx(
