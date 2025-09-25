@@ -18,7 +18,10 @@ export interface Props {
 
 export function ButtonGroup({ className, buttons, gap }: Props) {
   return (
-    <div className={clsx(className, 'flex items-center justify-center')} style={{ gap: gap }}>
+    <div
+      className={clsx(className, 'flex flex-col flex-wrap items-center justify-center sm:flex-row')}
+      style={{ gap: gap }}
+    >
       {buttons?.map(({ link, text, color }, index) => (
         <LinkButton key={index} link={link} text={text} color={color ?? 'black'} />
       ))}
