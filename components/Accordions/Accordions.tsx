@@ -22,38 +22,40 @@ export const Accordions = forwardRef(function Accordions(
 ) {
   return (
     <Accordion.Root type={type} asChild>
-      <ul className={clsx(className, 'w-full space-y-5')} ref={ref}>
+      <ul className={clsx(className, 'w-full -space-y-px')} ref={ref}>
         {accordions.length === 0 ? (
-          <div className="p-6 text-center text-lg">There are no Accordions. Try adding some.</div>
+          <div className="p-6 text-center text-lg text-foreground">
+            There are no Accordions. Try adding some.
+          </div>
         ) : (
           accordions.map((accordion, i) => (
             <Accordion.Item key={i} value={`${i + 1}`} asChild>
-              <li className="group rounded-xl bg-white py-5 shadow-2xl shadow-black/10">
+              <li className="border-border group relative border py-5 pl-6 pr-6 transition-colors duration-300 ease-out hover:isolate hover:z-20 hover:border-foreground data-[state=open]:isolate data-[state=open]:z-10 data-[state=open]:border-primary md:py-8 md:pl-8 md:pr-8">
                 <Accordion.Header>
                   <Accordion.Trigger asChild>
-                    <div className="flex w-full cursor-pointer items-center gap-x-4 px-5 md:px-10">
-                      <div className="text-md flex-1 py-5 text-left font-bold leading-normal text-gray-900 md:text-lg">
+                    <div className="flex w-full cursor-pointer items-center gap-x-10">
+                      <div className="flex-1 text-left font-heading text-xl font-light uppercase leading-tight text-foreground sm:text-2xl md:text-4xl">
                         {accordion.title}
                       </div>
 
                       <svg
-                        viewBox="0 0 20 20"
+                        viewBox="0 0 28 28"
                         fill="none"
-                        className="h-5 w-5 fill-gray-300"
+                        className="h-6 w-6 fill-foreground opacity-40 md:h-7 md:w-7"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <rect
-                          x="9"
-                          className="h-5 w-0.5 origin-center transition-transform duration-300 group-data-[state=open]:rotate-90"
+                          x="13"
+                          className="h-7 w-0.5 origin-center transition-transform duration-300 group-data-[state=open]:rotate-90"
                         />
-                        <rect y="9" className="h-0.5 w-5" />
+                        <rect y="13" className="h-0.5 w-7" />
                       </svg>
                     </div>
                   </Accordion.Trigger>
                 </Accordion.Header>
 
                 <Accordion.Content className="w-full overflow-hidden data-[state=closed]:animate-collapse data-[state=open]:animate-expand">
-                  <div className="text-md px-5 pb-1 leading-relaxed text-gray-900 md:px-10 md:pb-3">
+                  <div className="pt-4 font-body text-lg leading-relaxed text-foreground md:pt-5">
                     {accordion.body}
                   </div>
                 </Accordion.Content>

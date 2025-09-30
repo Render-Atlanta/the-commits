@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 
-import { Group, List, Select, Slot, Style } from '@makeswift/runtime/controls'
+import { Group, List, RichText, Select, Slot, Style } from '@makeswift/runtime/controls'
 
 import { runtime } from '@/lib/makeswift/runtime'
 
@@ -8,14 +8,14 @@ runtime.registerComponent(
   lazy(() => import('./Accordions')),
   {
     type: 'accordions',
-    label: 'Custom / Accordions',
+    label: 'Accordions',
     props: {
       className: Style(),
       accordions: List({
         label: 'Accordions',
         type: Group({
           props: {
-            title: Slot(),
+            title: RichText({ mode: RichText.Mode.Inline }),
             body: Slot(),
           },
         }),

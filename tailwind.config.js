@@ -9,6 +9,7 @@ module.exports = {
         background: 'hsl(var(--color-background))',
         foreground: 'hsl(var(--color-foreground))',
         primary: 'hsl(var(--color-primary))',
+        border: 'hsl(var(--color-border))',
         transparent: 'transparent',
       },
       fontFamily: {

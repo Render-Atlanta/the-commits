@@ -16,6 +16,13 @@ export interface Props {
 }
 
 export function LinkList({ className, links }: Props) {
+  if (links.length === 0) {
+    return (
+      <div className={clsx(className, 'w-full p-6 text-center text-lg text-foreground')}>
+        There are no link. Try adding some.
+      </div>
+    )
+  }
   return (
     <div className={clsx(className, 'flex flex-col items-center justify-center text-center')}>
       {links.map(
