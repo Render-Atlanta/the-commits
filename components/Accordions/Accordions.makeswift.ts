@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 
-import { Group, List, RichText, Select, Slot, Style } from '@makeswift/runtime/controls'
+import { Group, List, Select, Slot, Style, TextInput } from '@makeswift/runtime/controls'
 
 import { runtime } from '@/lib/makeswift/runtime'
 
@@ -15,12 +15,12 @@ runtime.registerComponent(
         label: 'Accordions',
         type: Group({
           props: {
-            title: RichText({ mode: RichText.Mode.Inline }),
+            title: TextInput({ label: 'Title', defaultValue: 'Title', selectAll: true }),
             body: Slot(),
           },
         }),
-        getItemLabel() {
-          return 'Slot'
+        getItemLabel(accordion) {
+          return accordion?.title ?? 'Title'
         },
       }),
       type: Select({
