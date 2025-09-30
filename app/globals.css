@@ -25,7 +25,11 @@
     }
 
     label + div {
-      @apply !border-foreground/40 !transition-all duration-300 ease-out;
+      @apply !h-12 max-h-none !border-foreground/40;
+    }
+
+    input {
+      @apply !h-12 max-h-none shrink-0 !border-foreground/40 focus:!border-foreground;
     }
 
     button[type='submit'] {
