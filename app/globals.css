@@ -24,8 +24,12 @@
       @apply font-heading;
     }
 
+    label + div {
+      @apply !border-foreground/40 !transition-all duration-300 ease-out;
+    }
+
     button[type='submit'] {
-      @apply mt-2 !h-14 max-h-none shrink-0 font-heading text-lg uppercase !ring-1 !ring-foreground/40 !transition-all duration-300 ease-out hover:!ring-foreground sm:text-xl;
+      @apply mt-2 !h-14 max-h-none shrink-0 text-center font-heading text-lg uppercase !ring-1 !ring-foreground/40 !transition-all duration-300 ease-out hover:!ring-foreground sm:text-xl;
     }
 
     div#__next {
