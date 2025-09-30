@@ -2,12 +2,9 @@ import { Params } from 'next/dist/server/request/params'
 import { Space_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 
-import { MakeswiftComponent } from '@makeswift/runtime/next'
 import { getSiteVersion } from '@makeswift/runtime/next/server'
 import clsx from 'clsx'
 
-import { NAVIGATION_COMPONENT_TYPE } from '@/components/Navigation/Navigation.makeswift'
-import { client } from '@/lib/makeswift/client'
 import '@/lib/makeswift/components'
 import { MakeswiftProvider } from '@/lib/makeswift/provider'
 
@@ -42,22 +39,11 @@ export default async function RootLayout({
   const resolvedParams = await params
   const langParam = resolvedParams?.lang
   const lang = Array.isArray(langParam) ? langParam[0] : langParam
-  const navigationSnapshot = await client.getComponentSnapshot(
-    `navigation`, //id of the component rendered on the page
-    { siteVersion: await getSiteVersion() }
-  )
 
   return (
     <html lang={lang}>
       <body className={clsx(nippo.variable, supreme.variable, spaceMono.variable)}>
-        <MakeswiftProvider siteVersion={await getSiteVersion()}>
-          <MakeswiftComponent
-            label="Navigation"
-            snapshot={navigationSnapshot}
-            type={NAVIGATION_COMPONENT_TYPE}
-          />
-          {children}
-        </MakeswiftProvider>
+        <MakeswiftProvider siteVersion={await getSiteVersion()}>{children}</MakeswiftProvider>
       </body>
     </html>
   )

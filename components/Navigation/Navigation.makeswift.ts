@@ -5,13 +5,10 @@ import { runtime } from '@/lib/makeswift/runtime'
 import { props as ButtonProps } from '../Button/Button.makeswift'
 import { Navigation } from './Navigation'
 
-export const NAVIGATION_COMPONENT_TYPE = 'navigation'
-
 runtime.registerComponent(Navigation, {
-  label: 'Navigation',
-  type: NAVIGATION_COMPONENT_TYPE,
+  label: 'Site Header',
+  type: 'navigation',
   icon: 'navigation',
-  hidden: true,
   props: {
     logo: Group({
       label: 'Logo',
