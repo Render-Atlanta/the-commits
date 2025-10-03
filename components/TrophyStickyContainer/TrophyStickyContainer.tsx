@@ -28,7 +28,7 @@ export function TrophyStickyContainer({ className, sections }: Props) {
         'relative flex flex-col-reverse items-center justify-center sm:flex-row'
       )}
     >
-      <div className="w-full flex-1 shrink-0 border-r border-foreground/25 sm:w-1/2">
+      <div className="w-full flex-1 shrink-0 border-foreground/25 sm:w-1/2 sm:border-r">
         {sections.map((section: { children: React.ReactNode }, index: number) => (
           <div
             key={index}
