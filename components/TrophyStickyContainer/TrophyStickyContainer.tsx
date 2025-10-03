@@ -38,7 +38,7 @@ export function TrophyStickyContainer({ className, sections }: Props) {
           </div>
         ))}
       </div>
-      <div className="aspect-square h-96 w-full flex-1 shrink-0 sm:sticky sm:inset-y-0 sm:right-0 sm:top-0 sm:aspect-auto sm:h-screen">
+      <div className="aspect-square h-96 w-full flex-1 shrink-0 cursor-grab active:cursor-grabbing sm:sticky sm:inset-y-0 sm:right-0 sm:top-0 sm:aspect-auto sm:h-screen">
         <Spline scene="https://prod.spline.design/2Gm4QkPYPfTwREcA/scene.splinecode" />
       </div>
 
