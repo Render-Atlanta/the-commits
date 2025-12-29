@@ -13,7 +13,12 @@ export function MakeswiftProvider({
   siteVersion: SiteVersion | null
 }) {
   return (
-    <ReactRuntimeProvider siteVersion={siteVersion} runtime={runtime}>
+    <ReactRuntimeProvider
+      siteVersion={siteVersion}
+      runtime={runtime}
+      appOrigin={process.env.NEXT_PUBLIC_MAKESWIFT_APP_ORIGIN}
+      apiOrigin={process.env.NEXT_PUBLIC_MAKESWIFT_API_ORIGIN}
+    >
       <RootStyleRegistry>{children}</RootStyleRegistry>
     </ReactRuntimeProvider>
   )
