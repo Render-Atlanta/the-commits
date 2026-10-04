@@ -28,11 +28,7 @@ A homepage carousel of past award winners. Cards stay in year order, newest firs
 
 Leave **Year filter** blank to include every year.
 
-Placeholder winners for preview:
-
-1. **Example Winner** — Example Library — Commit of the Year — 2026 — LinkedIn
-2. **Example Collective** — Example Framework — Maintainer of the Year — 2026
-3. **Example Contributor** — Example Docs — Documentation & Design Excellence — 2025 — X and Instagram
+The 2026 winners are built in and shown when the Winners list is empty. Adding items replaces that set. Lifetime Achievement is first.
 `.trim()
 
 runtime.registerComponent(PastWinnersCarousel, {

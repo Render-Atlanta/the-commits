@@ -28,11 +28,7 @@ A grid of past award winners, grouped by year with the newest year first. Within
 
 Leave **Year filter** blank to show every year. Enter a year, such as \`2026\`, to show only that year.
 
-These examples are placeholders for previewing the layout. Replace them with real winners:
-
-1. **Example Winner** — Example Library — Commit of the Year — 2026 — https://example.com — LinkedIn https://example.com/linkedin
-2. **Example Collective** — Example Framework — Maintainer of the Year — 2026 — https://example.com
-3. **Example Contributor** — Example Docs — Documentation & Design Excellence — 2025 — https://example.com — X https://example.com/x — Instagram https://example.com/instagram
+The 2026 winners are built in and shown when the Winners list is empty. Adding items replaces that set. Lifetime Achievement is first.
 `.trim()
 
 runtime.registerComponent(PastWinners, {

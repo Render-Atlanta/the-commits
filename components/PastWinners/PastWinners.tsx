@@ -12,39 +12,10 @@ import { categoryLabel } from './award-categories'
 import { groupWinners } from './group-winners'
 import { normalizeUrl } from './normalize-url'
 import { Winner } from './types'
+import { PAST_WINNERS } from './winners'
 
 const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background'
-
-const BUILDER_EXAMPLES: Winner[] = [
-  {
-    name: 'Example Winner',
-    project: 'Example Library',
-    category: 'commit-of-the-year',
-    year: '2026',
-    imageAlt: 'Placeholder for a winner photo or project logo',
-    projectLink: { href: 'https://example.com' },
-    linkedin: { href: 'https://example.com/linkedin' },
-  },
-  {
-    name: 'Example Collective',
-    project: 'Example Framework',
-    category: 'maintainer-of-the-year',
-    year: '2026',
-    imageAlt: 'Placeholder for a winner photo or project logo',
-    projectLink: { href: 'https://example.com' },
-  },
-  {
-    name: 'Example Contributor',
-    project: 'Example Docs',
-    category: 'documentation-design-excellence',
-    year: '2025',
-    imageAlt: 'Placeholder for a winner photo or project logo',
-    projectLink: { href: 'https://example.com' },
-    x: { href: 'https://example.com/x' },
-    instagram: { href: 'https://example.com/instagram' },
-  },
-]
 
 export type PastWinnersProps = {
   className?: string
@@ -139,14 +110,7 @@ export function PastWinners({
   const title = heading?.trim() || 'Past Winners'
   const introCopy = intro?.trim()
   const configured = winners.filter(Boolean)
-  const showingExamples = configured.length === 0
-
-  if (showingExamples && !isInBuilder) return null
-
-  const groups = groupWinners(
-    showingExamples ? BUILDER_EXAMPLES : configured,
-    showingExamples ? undefined : yearFilter
-  )
+  const groups = groupWinners(configured.length > 0 ? configured : PAST_WINNERS, yearFilter)
 
   if (groups.length === 0 && !isInBuilder) return null
 
@@ -168,13 +132,6 @@ export function PastWinners({
           </p>
         ) : null}
       </div>
-
-      {showingExamples ? (
-        <p className="mt-8 max-w-3xl border border-border p-6 font-body text-base font-light leading-relaxed text-foreground/70">
-          No winners yet. Add items in the Winners list to replace this preview. It is only visible
-          in the Makeswift builder.
-        </p>
-      ) : null}
 
       {groups.length > 0 ? (
         <div className="mt-12 md:mt-16">

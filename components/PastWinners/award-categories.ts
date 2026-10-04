@@ -1,7 +1,9 @@
 export const AWARD_CATEGORIES = [
+  { value: 'lifetime-achievement', label: 'Lifetime Achievement' },
   { value: 'commit-of-the-year', label: 'Commit of the Year' },
   { value: 'maintainer-of-the-year', label: 'Maintainer of the Year' },
-  { value: 'small-large-project-of-the-year', label: 'Small & Large Project of the Year' },
+  { value: 'small-project-of-the-year', label: 'Small Project of the Year' },
+  { value: 'large-project-of-the-year', label: 'Large Project of the Year' },
   { value: 'rising-star-contributor', label: 'Rising Star Contributor' },
   { value: 'documentation-design-excellence', label: 'Documentation & Design Excellence' },
   { value: 'open-source-for-good', label: 'Open Source for Good' },

@@ -1,15 +1,13 @@
-import { AWARD_CATEGORIES, categoryLabel } from '@/components/PastWinners/award-categories'
+import {
+  AWARD_CATEGORIES,
+  categoryLabel,
+  type AwardCategory,
+} from '@/components/PastWinners/award-categories'
 
-export const CAROUSEL_AWARD_CATEGORIES = [
-  ...AWARD_CATEGORIES,
-  { value: 'lifetime-achievement', label: 'Lifetime Achievement' },
-] as const
+export const CAROUSEL_AWARD_CATEGORIES = AWARD_CATEGORIES
 
-export type CarouselAwardCategory = (typeof CAROUSEL_AWARD_CATEGORIES)[number]['value']
+export type CarouselAwardCategory = AwardCategory
 
 export function carouselCategoryLabel(category?: string): string | undefined {
-  return (
-    CAROUSEL_AWARD_CATEGORIES.find(item => item.value === category)?.label ??
-    categoryLabel(category)
-  )
+  return categoryLabel(category)
 }

@@ -7,38 +7,9 @@ import clsx from 'clsx'
 
 import { groupWinners } from '@/components/PastWinners/group-winners'
 import { Winner } from '@/components/PastWinners/types'
+import { PAST_WINNERS } from '@/components/PastWinners/winners'
 
 import { WinnerCard } from './WinnerCard'
-
-const BUILDER_EXAMPLES: Winner[] = [
-  {
-    name: 'Example Winner',
-    project: 'Example Library',
-    category: 'commit-of-the-year',
-    year: '2026',
-    imageAlt: 'Placeholder for a winner photo or project logo',
-    projectLink: { href: 'https://example.com' },
-    linkedin: { href: 'https://example.com/linkedin' },
-  },
-  {
-    name: 'Example Collective',
-    project: 'Example Framework',
-    category: 'maintainer-of-the-year',
-    year: '2026',
-    imageAlt: 'Placeholder for a winner photo or project logo',
-    projectLink: { href: 'https://example.com' },
-  },
-  {
-    name: 'Example Contributor',
-    project: 'Example Docs',
-    category: 'documentation-design-excellence',
-    year: '2025',
-    imageAlt: 'Placeholder for a winner photo or project logo',
-    projectLink: { href: 'https://example.com' },
-    x: { href: 'https://example.com/x' },
-    instagram: { href: 'https://example.com/instagram' },
-  },
-]
 
 const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background'
@@ -114,11 +85,7 @@ export function PastWinnersCarousel({
   const title = heading?.trim() || 'Past Winners'
   const introCopy = intro?.trim()
   const configured = winners.filter(Boolean)
-  const showingExamples = configured.length === 0
-  const slides = orderedWinners(
-    showingExamples ? BUILDER_EXAMPLES : configured,
-    showingExamples ? undefined : yearFilter
-  )
+  const slides = orderedWinners(configured.length > 0 ? configured : PAST_WINNERS, yearFilter)
 
   const updateScrollState = useCallback(() => {
     const scroller = scrollerRef.current
@@ -189,7 +156,6 @@ export function PastWinnersCarousel({
     })
   }
 
-  if (showingExamples && !isInBuilder) return null
   if (slides.length === 0 && !isInBuilder) return null
 
   return (
@@ -229,13 +195,6 @@ export function PastWinnersCarousel({
           </div>
         ) : null}
       </div>
-
-      {showingExamples ? (
-        <p className="mt-8 max-w-3xl border border-border p-6 font-body text-base font-light leading-relaxed text-foreground/70">
-          No winners yet. Add items in the Winners list to replace this preview. It is only visible
-          in the Makeswift builder.
-        </p>
-      ) : null}
 
       {slides.length > 0 ? (
         <>
