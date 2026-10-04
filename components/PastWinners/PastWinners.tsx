@@ -93,6 +93,7 @@ function WinnerCard({ winner }: { winner: Winner }) {
         linkedin={winner.linkedin}
         x={winner.x}
         instagram={winner.instagram}
+        website={winner.website}
       />
     </li>
   )

@@ -19,7 +19,12 @@ export const PAST_WINNERS: Winner[] = [
     year: YEAR,
     image: { url: '/winners/model-context-protocol.png' },
     imageAlt: 'Model Context Protocol logo',
-    projectLink: { href: 'https://github.com/modelcontextprotocol' },
+    projectLink: {
+      href: 'https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro',
+    },
+    website: {
+      href: 'https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro',
+    },
   },
   {
     name: 'Anthony Fu',

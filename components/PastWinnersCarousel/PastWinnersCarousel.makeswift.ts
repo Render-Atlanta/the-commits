@@ -55,7 +55,7 @@ runtime.registerComponent(PastWinnersCarousel, {
     winners: List({
       label: 'Winners',
       description:
-        'Each item is one winner. The card links to the project URL. LinkedIn, X, and Instagram are optional.',
+        'Each item is one winner. The card links to the project URL. LinkedIn, X, Instagram, and website are optional.',
       type: Group({
         label: 'Winner',
         props: {
@@ -103,6 +103,10 @@ runtime.registerComponent(PastWinnersCarousel, {
           instagram: Link({
             label: 'Instagram URL',
             description: 'Optional. The icon is hidden when this is empty.',
+          }),
+          website: Link({
+            label: 'Website URL',
+            description: 'Optional. A web icon is hidden when this is empty.',
           }),
         },
       }),

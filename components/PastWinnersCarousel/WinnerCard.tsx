@@ -82,6 +82,7 @@ export function WinnerCard({ winner, className }: { winner: Winner; className?: 
         linkedin={winner.linkedin}
         x={winner.x}
         instagram={winner.instagram}
+        website={winner.website}
       />
     </li>
   )

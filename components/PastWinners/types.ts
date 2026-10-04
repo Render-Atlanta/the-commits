@@ -22,4 +22,5 @@ export type Winner = {
   linkedin?: WinnerLink
   x?: WinnerLink
   instagram?: WinnerLink
+  website?: WinnerLink
 }

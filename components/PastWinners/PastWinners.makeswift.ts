@@ -24,7 +24,7 @@ A grid of past award winners, grouped by year with the newest year first. Within
 
 **Add this section:** in the Makeswift builder, search for **Past Winners** and drop it on the page.
 
-**Add a winner:** open the Winners list and add an item. Fill in the name, project, category, year, image, and project URL. Social URLs are optional — an icon appears only when its URL is set, and the row hides when all three are empty.
+**Add a winner:** open the Winners list and add an item. Fill in the name, project, category, year, image, and project URL. Social URLs are optional — an icon appears only when its URL is set, and the row hides when all of them are empty.
 
 Leave **Year filter** blank to show every year. Enter a year, such as \`2026\`, to show only that year.
 
@@ -55,7 +55,7 @@ runtime.registerComponent(PastWinners, {
     winners: List({
       label: 'Winners',
       description:
-        'Each item is one winner. The card links to the project URL. LinkedIn, X, and Instagram are optional.',
+        'Each item is one winner. The card links to the project URL. LinkedIn, X, Instagram, and website are optional.',
       type: Group({
         label: 'Winner',
         props: {
@@ -103,6 +103,10 @@ runtime.registerComponent(PastWinners, {
           instagram: Link({
             label: 'Instagram URL',
             description: 'Optional. The icon is hidden when this is empty.',
+          }),
+          website: Link({
+            label: 'Website URL',
+            description: 'Optional. A web icon is hidden when this is empty.',
           }),
         },
       }),
