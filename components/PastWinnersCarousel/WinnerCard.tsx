@@ -4,10 +4,11 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { SocialLinks } from '@/components/PastWinners/SocialLinks'
-import { categoryLabel } from '@/components/PastWinners/award-categories'
 import { yearKey } from '@/components/PastWinners/group-winners'
 import { normalizeUrl } from '@/components/PastWinners/normalize-url'
 import { Winner } from '@/components/PastWinners/types'
+
+import { carouselCategoryLabel } from './categories'
 
 const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background'
@@ -15,7 +16,7 @@ const focusRing =
 export function WinnerCard({ winner, className }: { winner: Winner; className?: string }) {
   const name = winner.name?.trim() || 'Winner'
   const project = winner.project?.trim()
-  const category = categoryLabel(winner.category)
+  const category = carouselCategoryLabel(winner.category)
   const year = yearKey(winner.year)
   const imageUrl = winner.image?.url?.trim()
   const imageAlt = winner.imageAlt?.trim() || ''

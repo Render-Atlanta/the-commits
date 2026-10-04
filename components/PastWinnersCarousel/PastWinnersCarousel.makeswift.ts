@@ -9,14 +9,14 @@ import {
   TextInput,
 } from '@makeswift/runtime/controls'
 
-import { AWARD_CATEGORIES, type AwardCategory } from '@/components/PastWinners/award-categories'
 import { runtime } from '@/lib/makeswift/runtime'
 
 import { PastWinnersCarousel } from './PastWinnersCarousel'
+import { CAROUSEL_AWARD_CATEGORIES, type CarouselAwardCategory } from './categories'
 
-const categoryOptions = [...AWARD_CATEGORIES] as unknown as readonly [
-  { readonly value: AwardCategory; readonly label: string },
-  ...{ readonly value: AwardCategory; readonly label: string }[],
+const categoryOptions = [...CAROUSEL_AWARD_CATEGORIES] as unknown as readonly [
+  { readonly value: CarouselAwardCategory; readonly label: string },
+  ...{ readonly value: CarouselAwardCategory; readonly label: string }[],
 ]
 
 const description = `
