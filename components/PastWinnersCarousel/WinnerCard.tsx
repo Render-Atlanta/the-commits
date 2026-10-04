@@ -24,44 +24,43 @@ export function WinnerCard({ winner, className }: { winner: Winner; className?: 
 
   const body = (
     <>
-      <div className="relative aspect-square w-full overflow-hidden bg-foreground/5">
+      <div className="relative aspect-square w-full shrink-0 overflow-hidden bg-foreground/5">
         {imageUrl ? (
           <Image
             src={imageUrl}
             alt={imageAlt}
             fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 88vw"
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 38vw, 66vw"
             className="object-cover"
           />
         ) : null}
       </div>
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p className="font-heading text-sm uppercase tracking-wide text-foreground/70">{year}</p>
-        {category ? (
-          <p className="mt-2 font-heading text-xs uppercase leading-snug tracking-wider text-primary">
-            {category}
-          </p>
-        ) : null}
+      <div className="flex flex-1 flex-col p-4">
+        <p className="font-heading text-xs uppercase tracking-wide text-foreground/70">{year}</p>
+        <p className="mt-1.5 line-clamp-2 min-h-[2lh] font-heading text-xs uppercase leading-snug tracking-wider text-primary">
+          {category}
+        </p>
         <h4
           className={clsx(
-            'mt-2 font-heading text-xl font-light uppercase leading-tight text-foreground sm:text-2xl',
+            'mt-1.5 line-clamp-2 min-h-[2lh] font-heading text-base font-light uppercase leading-tight text-foreground sm:text-lg',
             projectHref && 'transition-colors duration-300 ease-out group-hover/card:text-primary'
           )}
         >
           {name}
         </h4>
-        {project ? (
-          <p className="mt-2 font-body text-base font-light leading-relaxed text-foreground/70">
-            {project}
-          </p>
-        ) : null}
+        <p
+          className="mt-1.5 line-clamp-2 min-h-[2lh] font-body text-sm font-light leading-snug text-foreground/70"
+          aria-hidden={project ? undefined : true}
+        >
+          {project}
+        </p>
         {projectHref ? <span className="sr-only"> (opens in a new tab)</span> : null}
       </div>
     </>
   )
 
   return (
-    <li className={clsx('flex h-full min-w-0 flex-col', className)}>
+    <li className={clsx('flex min-w-0 flex-col self-stretch', className)}>
       {projectHref ? (
         <Link
           href={projectHref}
@@ -69,21 +68,25 @@ export function WinnerCard({ winner, className }: { winner: Winner; className?: 
           rel="noopener noreferrer"
           className={clsx(
             focusRing,
-            'group/card flex flex-1 flex-col border border-border transition-colors duration-300 ease-out hover:border-foreground'
+            'group/card flex min-h-0 flex-1 flex-col border border-border transition-colors duration-300 ease-out hover:border-foreground'
           )}
         >
           {body}
         </Link>
       ) : (
-        <div className="flex flex-1 flex-col border border-border">{body}</div>
+        <div className="flex min-h-0 flex-1 flex-col border border-border">{body}</div>
       )}
-      <SocialLinks
-        name={name}
-        linkedin={winner.linkedin}
-        x={winner.x}
-        instagram={winner.instagram}
-        website={winner.website}
-      />
+      <div className="mt-2.5 min-h-8">
+        <SocialLinks
+          name={name}
+          linkedin={winner.linkedin}
+          x={winner.x}
+          instagram={winner.instagram}
+          website={winner.website}
+          className="mt-0"
+          buttonClassName="size-8"
+        />
+      </div>
     </li>
   )
 }

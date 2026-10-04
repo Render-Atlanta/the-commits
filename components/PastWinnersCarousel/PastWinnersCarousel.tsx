@@ -15,7 +15,7 @@ const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background'
 
 const slideWidth =
-  'w-[88%] shrink-0 snap-start sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]'
+  'w-[66%] shrink-0 snap-start sm:w-[calc((100%-1.5rem)*0.375)] lg:w-[calc((100%-3rem)*0.25)]'
 
 export type PastWinnersCarouselProps = {
   className?: string

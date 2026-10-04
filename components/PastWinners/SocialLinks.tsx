@@ -75,12 +75,16 @@ export function SocialLinks({
   x,
   instagram,
   website,
+  className,
+  buttonClassName,
 }: {
   name: string
   linkedin?: WinnerLink
   x?: WinnerLink
   instagram?: WinnerLink
   website?: WinnerLink
+  className?: string
+  buttonClassName?: string
 }) {
   const links = [
     toSocialLink(linkedin, 'linkedin', `${name} on LinkedIn (opens in a new tab)`),
@@ -92,7 +96,7 @@ export function SocialLinks({
   if (links.length === 0) return null
 
   return (
-    <ul className="mt-3 flex gap-2" aria-label={`${name} on social`}>
+    <ul className={clsx('flex gap-2', className ?? 'mt-3')} aria-label={`${name} on social`}>
       {links.map(link => (
         <li key={link.icon}>
           <Link
@@ -102,7 +106,8 @@ export function SocialLinks({
             aria-label={link.label}
             className={clsx(
               focusRing,
-              'grid size-11 place-items-center border border-foreground/40 text-foreground transition-colors duration-300 ease-out hover:border-foreground hover:text-primary'
+              'grid place-items-center border border-foreground/40 text-foreground transition-colors duration-300 ease-out hover:border-foreground hover:text-primary',
+              buttonClassName ?? 'size-11'
             )}
           >
             <SocialIcon name={link.icon} />
