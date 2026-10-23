@@ -9,7 +9,6 @@ import {
   AwsLogo,
   CargillLogo,
   CoderLogo,
-  CursorLogo,
   DoppelLogo,
   FigmaLogo,
   GustoLogo,
@@ -17,6 +16,7 @@ import {
   LumenLogo,
   MastraLogo,
   NetflixLogo,
+  RenderLogo,
   SanityLogo,
   VercelLogo,
 } from './logos'
@@ -39,7 +39,7 @@ const sponsors = [
   { name: 'Gusto', href: 'https://gusto.com', Logo: GustoLogo },
   { name: 'Coder', href: 'https://coder.com', Logo: CoderLogo },
   { name: 'Vercel', href: 'https://vercel.com', Logo: VercelLogo },
-  { name: 'Cursor', href: 'https://cursor.com', Logo: CursorLogo },
+  { name: 'Render', href: 'https://render.com', Logo: RenderLogo },
 ] as const
 
 export type SponsoredByProps = {
