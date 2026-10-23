@@ -68,13 +68,13 @@ export function WinnerCard({ winner, className }: { winner: Winner; className?: 
           rel="noopener noreferrer"
           className={clsx(
             focusRing,
-            'group/card flex min-h-0 flex-1 flex-col border border-border transition-colors duration-300 ease-out hover:border-foreground'
+            'group/card relative flex min-h-0 flex-1 flex-col border border-border transition-colors duration-300 ease-out hover:border-foreground'
           )}
         >
           {body}
         </Link>
       ) : (
-        <div className="flex min-h-0 flex-1 flex-col border border-border">{body}</div>
+        <div className="relative flex min-h-0 flex-1 flex-col border border-border">{body}</div>
       )}
       <div className="mt-2.5 min-h-8">
         <SocialLinks

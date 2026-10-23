@@ -80,13 +80,13 @@ function WinnerCard({ winner }: { winner: Winner }) {
           rel="noopener noreferrer"
           className={clsx(
             focusRing,
-            'group/card flex flex-1 flex-col border border-border transition-colors duration-300 ease-out hover:border-foreground'
+            'group/card relative flex flex-1 flex-col border border-border transition-colors duration-300 ease-out hover:border-foreground'
           )}
         >
           {body}
         </Link>
       ) : (
-        <div className="flex flex-1 flex-col border border-border">{body}</div>
+        <div className="relative flex flex-1 flex-col border border-border">{body}</div>
       )}
       <SocialLinks
         name={name}
