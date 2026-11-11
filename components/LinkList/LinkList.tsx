@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 import clsx from 'clsx'
 
+import { externalLinkRel, safeHref } from '@/lib/safe-href'
+
 export interface Props {
   className?: string
   links: {
@@ -32,8 +34,9 @@ export function LinkList({ className, links }: Props) {
         ) => (
           <Link
             key={index}
-            href={linkItem.link?.href || ''}
+            href={safeHref(linkItem.link?.href)}
             target={linkItem.link?.target}
+            rel={externalLinkRel(linkItem.link?.target)}
             className="group/link inline-flex items-center gap-x-4 py-1 leading-normal md:py-2"
           >
             <span className="relative z-10 translate-x-4 font-heading text-3xl font-light text-foreground transition-all duration-300 ease-out hover:text-primary group-hover/link:translate-x-0 sm:translate-x-6 md:text-4xl lg:text-5xl xl:text-6xl">

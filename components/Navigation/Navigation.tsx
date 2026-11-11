@@ -7,6 +7,7 @@ import ReactHeadroom from 'react-headroom'
 import clsx from 'clsx'
 
 import { ButtonLinkProps as ButtonProps, LinkButton } from '@/components/Button'
+import { externalLinkRel, safeHref } from '@/lib/safe-href'
 
 type Props = {
   className?: string
@@ -40,8 +41,9 @@ export function Navigation({ className, logo, text, cta }: Props) {
         <div className="flex items-center border border-foreground/40 bg-background">
           {logo.image && (
             <Link
-              href={logo.link?.href ?? '#'}
+              href={safeHref(logo.link?.href)}
               target={logo.link?.target}
+              rel={externalLinkRel(logo.link?.target)}
               className="h-full py-2 pl-3 pr-5"
             >
               <Image

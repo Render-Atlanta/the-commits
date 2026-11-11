@@ -5,6 +5,8 @@ import { ButtonHTMLAttributes, Ref } from 'react'
 
 import clsx from 'clsx'
 
+import { externalLinkRel, safeHref } from '@/lib/safe-href'
+
 export interface ButtonLinkProps {
   className?: string
   link?: { href: string; target?: '_blank' | '_self' }
@@ -15,7 +17,6 @@ export interface ButtonLinkProps {
 }
 
 export function LinkButton({ className, link, color = 'black', text = 'Button' }: ButtonLinkProps) {
-  console.log('@@ link:', link)
   return (
     <Link
       className={clsx(
@@ -26,8 +27,9 @@ export function LinkButton({ className, link, color = 'black', text = 'Button' }
           white: 'bg-foreground text-background',
         }[color]
       )}
-      href={link?.href ?? '#'}
+      href={safeHref(link?.href)}
       target={link?.target}
+      rel={externalLinkRel(link?.target)}
     >
       <div className="absolute left-0 grid size-14 -translate-x-16 place-items-center bg-primary text-background transition-transform duration-300 ease-out group-hover/button:translate-x-0 sm:size-16">
         <svg
