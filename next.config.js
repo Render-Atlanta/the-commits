@@ -49,10 +49,16 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `frame-ancestors ${frameAncestorSources()}`,
           },
-          {
-            key: 'Content-Security-Policy-Report-Only',
-            value: contentSecurityPolicyReportOnly,
-          },
+          // Dev uses eval for React Refresh. Keep the report-only policy on
+          // production responses so the local console stays quiet.
+          ...(process.env.NODE_ENV === 'production'
+            ? [
+                {
+                  key: 'Content-Security-Policy-Report-Only',
+                  value: contentSecurityPolicyReportOnly,
+                },
+              ]
+            : []),
         ],
       },
     ]
