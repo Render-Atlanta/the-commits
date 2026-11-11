@@ -21,7 +21,7 @@ const html = `<!DOCTYPE html>
 <body>
 <canvas></canvas>
 <script type="module">
-  import { Application } from '/trophy-scene/runtime/runtime.js'
+  import { Application } from '/spline-runtime/runtime.js'
   const canvas = document.querySelector('canvas')
   const app = new Application(canvas)
   app.load(${JSON.stringify(SCENE)})

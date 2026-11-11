@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "icons": "npx @svgr/cli --typescript --replace-attr-values \"#000=currentColor\" --out-dir generated/icons -- public/icons"
+    "icons": "npx @svgr/cli --typescript --replace-attr-values \"#000=currentColor\" --out-dir generated/icons -- public/icons",
+    "postinstall": "node scripts/copy-spline-runtime.mjs"
   },
   "dependencies": {
     "@makeswift/runtime": "^0.25.3",

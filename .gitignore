@@ -35,5 +35,8 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Copied from @splinetool/runtime during postinstall.
+/public/spline-runtime
+
 # typescript
 *.tsbuildinfo
