@@ -22,10 +22,10 @@ importers:
         version: 1.1.13(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@splinetool/react-spline':
         specifier: ^4.1.0
-        version: 4.1.0(@splinetool/runtime@1.10.64)(next@15.5.29(@types/node@22.18.5)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 4.1.0(@splinetool/runtime@2.0.173)(next@15.5.29(@types/node@22.18.5)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@splinetool/runtime':
-        specifier: ^1.10.64
-        version: 1.10.64
+        specifier: ^2.0.173
+        version: 2.0.173
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -730,8 +730,8 @@ packages:
       next:
         optional: true
 
-  '@splinetool/runtime@1.10.64':
-    resolution: {integrity: sha512-9pkT0o97fZXpHL6wQ0IJ1T1f30JbeYXYoOcue8l5ViJPH9cfOUqPBX18qJUXEA1caWMWkbMf1u9rsrKxwCn4/A==}
+  '@splinetool/runtime@2.0.173':
+    resolution: {integrity: sha512-DCCGxV63M61fuJkgzpV/z4NvYaKWr646vnewsYp+sUpfeUEJ4R1qOInaiXCWzOLSOQ3WK/+XHF9Uu1nj2yTo5w==}
 
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
@@ -1469,6 +1469,7 @@ packages:
   eslint@9.35.0:
     resolution: {integrity: sha512-QePbBFMJFjgmlE+cXAlbHZbHpdFVS2E/6vzCy7aKlebddvl1vadiC4JFV5u/wqTkNUwEV8WrQi257jf5f06hrg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -1617,6 +1618,7 @@ packages:
 
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   globals@14.0.0:
@@ -2086,8 +2088,8 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
-  on-change@4.0.2:
-    resolution: {integrity: sha512-cMtCyuJmTx/bg2HCpHo3ZLeF7FZnBOapLqZHr2AlLeJ5Ul0Zu2mUJJz051Fdwu/Et2YW04ZD+TtU+gVy0ACNCA==}
+  on-change@4.0.0:
+    resolution: {integrity: sha512-PTu7C9Jsz4b+sNMDpH0eZFTr7uxdOtoDWRnhaVNK50bgrrnW5nvbWI0jm5DG9qOoTnIhBzE9xoKVFPD9xgtbdg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   optionator@0.9.4:
@@ -2740,6 +2742,7 @@ packages:
 
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   vary@1.1.2:
@@ -3455,9 +3458,9 @@ snapshots:
 
   '@rushstack/eslint-patch@1.12.0': {}
 
-  '@splinetool/react-spline@4.1.0(@splinetool/runtime@1.10.64)(next@15.5.29(@types/node@22.18.5)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@splinetool/react-spline@4.1.0(@splinetool/runtime@2.0.173)(next@15.5.29(@types/node@22.18.5)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
-      '@splinetool/runtime': 1.10.64
+      '@splinetool/runtime': 2.0.173
       blurhash: 2.0.5
       lodash.debounce: 4.0.8
       react: 19.1.1
@@ -3467,9 +3470,9 @@ snapshots:
     optionalDependencies:
       next: 15.5.29(@types/node@22.18.5)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  '@splinetool/runtime@1.10.64':
+  '@splinetool/runtime@2.0.173':
     dependencies:
-      on-change: 4.0.2
+      on-change: 4.0.0
       semver-compare: 1.0.0
 
   '@standard-schema/spec@1.0.0': {}
@@ -4972,7 +4975,7 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  on-change@4.0.2: {}
+  on-change@4.0.0: {}
 
   optionator@0.9.4:
     dependencies:
